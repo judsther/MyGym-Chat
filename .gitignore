@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+node_modules/
+
+/src/services/Firebase/firebase-config.js
+firebase-config.js
+# Archivos de entorno
+.env
+
+build/
+dist/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+

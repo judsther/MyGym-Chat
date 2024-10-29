@@ -25,7 +25,6 @@ dist-ssr
 
 node_modules/
 
-/src/services/Firebase/firebase-config.js
 firebase-config.js
 # Archivos de entorno
 .env

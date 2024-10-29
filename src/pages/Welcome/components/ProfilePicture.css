@@ -1,0 +1,27 @@
+.avatar-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .avatar {
+    width: 100px; /* Cambia el tamaño según tus necesidades */
+    height: 100px; /* Cambia el tamaño según tus necesidades */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+  }
+  
+  .edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    cursor: pointer;
+    background-color:rgb(77, 77, 77);
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 3px;
+    padding-left: 6.5px;
+    padding-right: 6.5px;
+  }
+
+
+  

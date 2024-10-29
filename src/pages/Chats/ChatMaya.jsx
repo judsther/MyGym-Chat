@@ -1,7 +1,7 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext, useEffect, useRef } from 'react';
 import { UserContext } from '/src/context/UserDataContext'; // Asegúrate de tener el UserContext
 import { db } from '/src/services/Firebase/firebase-config'; // Importa tu configuración de Firebase
-import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
+import { collection, addDoc, onSnapshot, query, orderBy, serverTimestamp } from 'firebase/firestore';
 import { Message } from './Components/Message';
 import { MessageInput } from './Components/MessageInput';
 import './ChatMaya.css'
@@ -39,7 +39,8 @@ export const ChatMaya = () => {
           text: newMessage,
           uid: currentUser.uid,
           username: username,
-          timestamp: new Date(),
+          ProfilePicture: currentUser.ProfilePicture,
+          timestamp: serverTimestamp(),
         });
         setNewMessage('');
       } catch (error) {
@@ -47,6 +48,16 @@ export const ChatMaya = () => {
       }
     }
   };
+
+  //useRef, inicializar la referencia con null
+    const endOfMessagesRef = useRef(null);
+  
+    // Scroll automático cuando se actualicen los mensajes
+    useEffect(() => {
+      endOfMessagesRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, [messages]);
+
+  
 
   return (
 
@@ -57,10 +68,12 @@ export const ChatMaya = () => {
     <i className="bi bi-chat-fill me-2"></i>Live Chat
   </h1>
   <div className="chat-box">
-    <div className="messages-container">
+    <div className="messages-container overflow-auto">
       {messages.map((msg, index) => (
-        <Message key={index} msg={msg} currentUser={currentUser} />
+        <Message key={index} msg={msg} currentUser={currentUser}/>
       ))}
+  
+      <div ref={endOfMessagesRef} />
     </div>
     
     <div className='message-input-container'>

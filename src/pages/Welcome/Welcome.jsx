@@ -7,10 +7,21 @@ import { auth } from "../../services/Firebase/firebase-config";
 import { Link, useNavigate } from "react-router-dom";
 import { LogOut } from "../../hooks/LogOut/LogOut";
 import './Welcome.css'
+import { ProfilePicture } from "./components/profilePicture";
+
+
+
 
 
 
 export const Welcome = () => {
+
+
+ 
+    const user = {
+      profilePicture: '', // Puedes obtener esto de Firestore
+    
+    }
 
   const {data,setData} = useContext(UserContext);
   const navigate = useNavigate();
@@ -30,8 +41,6 @@ export const Welcome = () => {
   if (!data) {
     return <p>Loading...</p>; // Mostrar mientras se verifica el estado
   }
-
-
  
 
   return (
@@ -42,6 +51,8 @@ export const Welcome = () => {
       <div className="container mt-5 pt-5 text-center">
       <h1>¡Hola, {data?.username}!</h1> 
       <h4>¿A qué gimnasio perteneces?</h4>
+
+ <ProfilePicture user={user} />
 
       {/*Cards para dirigir a los chats de los difrentes gimnasios inscritos */}
       <br />

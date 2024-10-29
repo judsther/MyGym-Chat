@@ -36,7 +36,7 @@ export function IniciarSesion() {
         console.log("Usuario de Firestore:", userData);
 
        // Guarda el username en el contexto
-        setData({ ...user, username: userData.username });
+        setData({ ...user, username: userData.username, displayName: data.username, profilePicture: userData.profilePicture });
     } else {
         console.log("No se encontró información del usuario en Firestore.");
       }

@@ -3,11 +3,10 @@ import { Link, useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { yupResolver } from '@hookform/resolvers/yup'
 import { registerSchema } from "./Auth/Auth";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signOut} from "firebase/auth";
 import { auth, db } from "../../../services/Firebase/firebase-config";
-
 import './Registro.css'
-import { doc, setDoc } from "firebase/firestore";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
 export const Registro = () => {
   const {register, handleSubmit, formState:{errors}} = useForm({
@@ -16,39 +15,36 @@ export const Registro = () => {
 
 const navigate = useNavigate();
 
-  const onSubmitForm = (data) => {
-       console.log(data);
-
+const onSubmitForm = (data) => {
+  
+      
        //FIREBASE AUTHENTICATION
     createUserWithEmailAndPassword(auth, data.email, data.password)
-    .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    console.log(user);
-    // Actualizar el perfil del usuario con el username
-    updateProfile(user, {
-      displayName: data.username, // Aquí guardas el username en el perfil del usuario
-    })
-      .then(async () => {
-        // También puedes guardar el username en Firestore si lo necesitas
-        await setDoc(doc(db, "users", user.uid), {
-          username: data.username,
-          email: data.email,
-        });
+    .then(async(userCredential) => {
 
-        console.log("Username actualizado en el perfil y guardado en Firestore");
 
-        // Redirigir a la vista de bienvenida
-        navigate('/IniciarSesion');
-      })
-      .catch((error) => {
-        console.error("Error al actualizar el perfil:", error.message);
-      });
-  })
-  .catch((error) => {
-    const errorMessage = error.message;
-    console.error("Error al crear usuario:", errorMessage);
-  });
+       // Signed up 
+       const user = userCredential.user;
+
+      await setDoc(doc(db, "users", user.uid), {
+        displayName: data.username, 
+         username: data.username.toString(),
+         email: data.email,
+         createdAt: serverTimestamp(),
+       });
+
+       
+           await signOut(auth);
+
+       // Redirigir a la vista de iniciar sesión
+       navigate('/IniciarSesion');
+     })
+     .catch((error) => {
+       alert("Error al actualizar el perfil:", error.message);
+     });
+  
+
+
 };
      
 

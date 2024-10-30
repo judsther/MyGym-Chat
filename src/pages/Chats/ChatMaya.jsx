@@ -35,11 +35,12 @@ export const ChatMaya = () => {
     if (newMessage.trim() !== '' && currentUser) {
       try {
         const username = currentUser.displayName || 'Usuario Anónimo';
+        const profilePicture = currentUser.profilePicture || '/src/assets/images/avatar.png'; 
         await addDoc(collection(db, 'chats'), {
           text: newMessage,
           uid: currentUser.uid,
           username: username,
-          ProfilePicture: currentUser.ProfilePicture,
+          profilePicture: profilePicture,
           timestamp: serverTimestamp(),
         });
         setNewMessage('');
@@ -72,6 +73,7 @@ export const ChatMaya = () => {
       {messages.map((msg, index) => (
         <Message key={index} msg={msg} currentUser={currentUser}/>
       ))}
+       
   
       <div ref={endOfMessagesRef} />
     </div>

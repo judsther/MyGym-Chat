@@ -4,6 +4,7 @@ import { createContext, useEffect, useState } from "react";
 import { auth, db } from "../services/Firebase/firebase-config";
 import { doc, getDoc } from "firebase/firestore"; // Importa Firestore
 
+
 export const UserContext = createContext("");
 
 export const MyProvider = ({ children }) => {
@@ -18,7 +19,7 @@ export const MyProvider = ({ children }) => {
         if (userDoc.exists()) {
           const userData = userDoc.data();
           // Guarda los datos del usuario, incluyendo el `username`
-          setData({ ...user, username: userData.username });
+          setData({ ...user, username: userData.username, profilePicture: userData.profilePicture });
         } else {
           console.log("No se encontró el documento del usuario en Firestore.");
           setData(user); // Si no hay datos en Firestore, solo guarda lo que viene de Auth

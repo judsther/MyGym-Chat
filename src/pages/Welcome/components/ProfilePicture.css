@@ -4,10 +4,10 @@
   }
   
   .avatar {
-    width: 100px; /* Cambia el tamaño según tus necesidades */
-    height: 100px; /* Cambia el tamaño según tus necesidades */
-    border-radius: 50%; /* Hace que la imagen sea circular */
-    object-fit: cover; /* Asegura que la imagen se recorte adecuadamente */
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%; 
+    object-fit: cover; 
   }
   
   .edit-icon {

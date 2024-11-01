@@ -9,7 +9,10 @@ export const MessageInput = ({ newMessage, setNewMessage, handleSubmit }) => {
         placeholder="Escribe tu mensaje..."
         value={newMessage}
         onChange={(e) => setNewMessage(e.target.value)}
-        style={{ backgroundColor: 'rgb(235, 231, 150)', color: 'rgb(44, 44, 44)' }}
+        style={{
+          backgroundColor: "rgb(235, 231, 150)",
+          color: "rgb(44, 44, 44)",
+        }}
       />
       <button type="submit" className="btn btn-primary">
         <i className="bi bi-send-fill"></i> Enviar

@@ -1,6 +1,5 @@
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import './assets/CSS/App.css'
 import { Home } from './pages/Home/Home'
 import { IniciarSesion } from './pages/Home/Components/IniciarSesion'
 import { Registro } from './pages/Home/Components/Registro'

@@ -1,7 +1,8 @@
 .boton-registrarme {
     background-color: rgb(135, 189, 255);
     border-color: rgb(255, 255, 255);
-    color: #151515;;
+    color: #151515;
+    ;
     border-width: 2pt;
 
 }
@@ -14,6 +15,7 @@
     border-color: rgb(135, 189, 255);
     border-width: 2pt;
 }
-.boton-registrarme :hover{
+
+.boton-registrarme :hover {
     background-color: rgb(235, 231, 150);
 }

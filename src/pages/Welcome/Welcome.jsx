@@ -29,9 +29,9 @@ export const Welcome = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((data) => {
       if (data) {
-        setData(data); // Actualiza el contexto con el usuario autenticado
+        setData(data);
       } else {
-        navigate('/'); // Si no está autenticado, redirige al login
+        navigate('/'); 
       }
     });
 
@@ -39,7 +39,7 @@ export const Welcome = () => {
   }, [navigate, setData]);
 
   if (!data) {
-    return <p>Loading...</p>; // Mostrar mientras se verifica el estado
+    return <p>Loading...</p>; 
   }
  
 

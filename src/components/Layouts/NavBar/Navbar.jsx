@@ -3,6 +3,9 @@ import logoMGC from "../../../assets/images/logoMGC.png";
 import "./Navbar.css";
 
 export const Navbar = () => {
+
+
+  
   return (
     <>
       <nav className="navbar border-bottom border-body fixed-top navbar-expand-md navnav">

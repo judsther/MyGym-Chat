@@ -11,37 +11,28 @@ import { ProfilePicture } from "./components/ProfilePicture";
 
 
 
-
-
-
 export const Welcome = () => {
-
-
- 
-    const user = {
-      profilePicture: '', // Puedes obtener esto de Firestore
-    
-    }
 
   const {data,setData} = useContext(UserContext);
   const navigate = useNavigate();
+ 
+    const user = {
+      profilePicture: data?.profilePicture, 
+    
+    }
+
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((data) => {
-      if (data) {
-        setData(data);
-      } else {
+    auth.onAuthStateChanged((data) => {
+      if (!data) {
         navigate('/'); 
+        return <p>Loading...</p>;
       }
     });
-
-    return () => unsubscribe();
   }, [navigate, setData]);
 
-  if (!data) {
-    return <p>Loading...</p>; 
-  }
- 
+  
+
 
   return (
     <div>
@@ -52,7 +43,7 @@ export const Welcome = () => {
       <h1>¡Hola, {data?.username}!</h1> 
       <h4>¿A qué gimnasio perteneces?</h4>
 
- <ProfilePicture user={user} />
+ <ProfilePicture user={user?.profilePicture} />
 
       {/*Cards para dirigir a los chats de los difrentes gimnasios inscritos */}
       <br />

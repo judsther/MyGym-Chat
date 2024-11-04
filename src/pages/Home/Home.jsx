@@ -4,8 +4,10 @@ import "./Home.css";
 import { useEffect } from "react";
 import { auth } from "../../services/Firebase/firebase-config";
 
+
 export function Home() {
   const navigate = useNavigate();
+  
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -15,6 +17,7 @@ export function Home() {
         navigate("/");
       }
     });
+
 
     return () => unsubscribe();
   }, [navigate]);

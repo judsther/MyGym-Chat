@@ -5,7 +5,9 @@ import { IniciarSesion } from './pages/Home/Components/IniciarSesion'
 import { Registro } from './pages/Home/Components/Registro'
 import { Welcome } from './pages/Welcome/Welcome'
 import { MyProvider } from './context/UserDataContext'
-import { ChatMaya } from './pages/Chats/ChatMaya'
+import { ChatMaya } from './pages/Chats/Maya/ChatMaya'
+import { ChatTitanic1 } from './pages/Chats/Titanic1/ChatTitanic1'
+
 
 function App() {
  
@@ -21,6 +23,7 @@ function App() {
     <Route path='/Registro' element={<Registro/>}/>
     <Route path='/Welcome' element={<Welcome/>}/>
     <Route path='/ChatMaya' element={<ChatMaya/>}/>
+    <Route path='/ChatTitanic1' element={<ChatTitanic1/>}/>
 
     
    </Routes>

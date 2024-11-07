@@ -3,11 +3,12 @@ import { Navbar } from "../../components/Layouts/NavBar/Navbar"
 import { UserContext } from "../../context/UserDataContext";
 import { Home } from "../Home/Home";
 import  maya from '/src/assets/images/maya.jpg'
+import  titanic1 from '/src/assets/images/titanic1.jpg'
 import { auth } from "../../services/Firebase/firebase-config";
 import { Link, useNavigate } from "react-router-dom";
 import { LogOut } from "../../hooks/LogOut/LogOut";
 import './Welcome.css'
-import { ProfilePicture } from "./components/ProfilePicture";
+import { ProfilePicture } from "./components/profilePicture";
 
 
 
@@ -59,6 +60,20 @@ export const Welcome = () => {
       </div>
       </div>
       </div>
+
+      <br />
+      <br />
+      <div className="d-flex text-center align-items-center justify-content-center">
+      <div className="card d-flex align-items-center" style={{width: '18rem'}}>
+      <img src={titanic1} alt="Logo" width="200" className="d-inline-block m-3 mayaimg border border-3 border-dark" />
+      <div className="card-body">
+      <h5 className="card-title">Titanic Gym 1</h5>
+      <p className="card-text">4 avenida Norte #31 Barrio El Santuario.</p>
+      <Link to={'/ChatTitanic1'} className="btn btnchat">Unirme al chat</Link>
+      </div>
+      </div>
+      </div>
+
 
 
     

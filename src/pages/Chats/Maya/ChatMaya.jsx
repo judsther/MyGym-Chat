@@ -2,10 +2,10 @@ import { useState, useContext, useEffect, useRef } from "react";
 import { UserContext } from "/src/context/UserDataContext"; 
 import { db } from "/src/services/Firebase/firebase-config"; 
 import { collection, addDoc, onSnapshot, query, orderBy, serverTimestamp,} from "firebase/firestore";
-import { Message } from "./Components/Message";
-import { MessageInput } from "./Components/MessageInput";
+import { Message } from "../Components/Message";
+import { MessageInput } from "../Components/MessageInput";
 import "./ChatMaya.css";
-import { Navbar } from "../../components/Layouts/NavBar/Navbar";
+import { Navbar } from "../../../components/Layouts/NavBar/Navbar";
 
 export const ChatMaya = () => {
   const { data: currentUser } = useContext(UserContext);

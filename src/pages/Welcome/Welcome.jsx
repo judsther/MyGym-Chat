@@ -8,7 +8,7 @@ import { auth } from "../../services/Firebase/firebase-config";
 import { Link, useNavigate } from "react-router-dom";
 import { LogOut } from "../../hooks/LogOut/LogOut";
 import './Welcome.css'
-import { ProfilePicture } from "./components/profilePicture";
+import { ProfilePicture } from "./components/ProfilePicture";
 
 
 

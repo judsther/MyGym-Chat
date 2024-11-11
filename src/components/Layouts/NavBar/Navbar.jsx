@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import logoMGC from "../../../assets/images/logoMGC.png";
 import "./Navbar.css";
+import { LogOut } from "../../../hooks/LogOut/LogOut";
 
 export const Navbar = () => {
 
@@ -38,9 +39,7 @@ export const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/Welcome" className="nav-link colortext">
-                  MiChat
-                </Link>
+              <p className="nav-link" ><LogOut/></p>
               </li>
             </ul>
           </div>

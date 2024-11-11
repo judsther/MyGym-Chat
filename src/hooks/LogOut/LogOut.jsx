@@ -2,6 +2,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../services/Firebase/firebase-config";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserDataContext";
+import { Link } from "react-router-dom";
 
 export const LogOut = () => {
   const { setData } = useContext(UserContext);
@@ -17,11 +18,10 @@ export const LogOut = () => {
       });
   };
   return (
-    <button
-      className="btn btn-outline-dark  mt-auto mb-0 p-2"
-      onClick={handleLogout}
-    >
+
+    <Link className="text-decoration-none"  style={{ color: "#513fb6" }} onClick={handleLogout}>
       Cerrar Sesión
-    </button>
+    </Link>
+  
   );
 };

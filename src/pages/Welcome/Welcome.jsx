@@ -78,7 +78,9 @@ export const Welcome = () => {
 
     
       <div className="d-flex align-items-end flex-column mb-3" style={{ height: '100px' }}  >
+      <button className="btn btn-outline-dark  mt-auto mb-0 p-2">
       <LogOut/>
+     </button>
       </div>
       </div>
       </>

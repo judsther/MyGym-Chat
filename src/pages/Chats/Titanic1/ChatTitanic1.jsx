@@ -12,6 +12,16 @@ export const ChatTitanic1 = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
 
+  
+  useEffect(() => {
+    if (currentUser) {
+      console.log("Usuario actual:", currentUser); // Imprime los datos del usuario si están disponibles
+    } else {
+      console.log("Esperando usuario...");
+    }
+  }, [currentUser]);
+
+
   useEffect(() => {
     const messagesRef = collection(db, "chat-titanic1");
     const q = query(messagesRef, orderBy("timestamp", "asc"));
@@ -57,8 +67,8 @@ export const ChatTitanic1 = () => {
 
   return (
     <div className="chat-container">
-      <h1 className="fixed-title p-2">
-        <Navbar />
+      <Navbar />
+      <h1 className="fixed-title p-2 mt-2">
         <i className="bi bi-chat-fill me-2"></i>Live Chat
       </h1>
       <div className="chat-box">

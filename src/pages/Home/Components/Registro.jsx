@@ -6,6 +6,9 @@ import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth, db } from "../../../services/Firebase/firebase-config";
 import "./Registro.css";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { useContext } from "react";
+import { UserContext } from "../../../context/UserDataContext";
+import { ProfilePicture } from "../../Welcome/components/ProfilePicture";
 
 export const Registro = () => {
   const {
@@ -17,6 +20,7 @@ export const Registro = () => {
   });
 
   const navigate = useNavigate();
+ const { setData } = useContext(UserContext);
 
   const onSubmitForm = (data) => {
     createUserWithEmailAndPassword(auth, data.email, data.password)
@@ -30,6 +34,12 @@ export const Registro = () => {
           createdAt: serverTimestamp(),
         });
 
+        setData({
+          ...user,
+          username: data.username,
+          displayName: data.username,
+          profilePicture: ProfilePicture, 
+        });
         await signOut(auth);
 
         navigate("/IniciarSesion");

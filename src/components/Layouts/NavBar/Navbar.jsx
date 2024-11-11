@@ -38,8 +38,8 @@ export const Navbar = () => {
                   Gimnasios
                 </Link>
               </li>
-              <li className="nav-item">
-              <p className="nav-link" ><LogOut/></p>
+              <li className="nav-item nav-link">
+              <LogOut/>
               </li>
             </ul>
           </div>

@@ -19,6 +19,7 @@ export const MyProvider = ({ children }) => {
        
           setData({
             ...user,
+            displayName: userData.username,
             username: userData.username,
             profilePicture: userData.profilePicture,
           });

@@ -57,8 +57,8 @@ export const ChatMaya = () => {
 
   return (
     <div className="chat-container">
-      <h1 className="fixed-title p-2">
-        <Navbar />
+       <Navbar />
+      <h1 className="fixed-title p-2 mt-2">
         <i className="bi bi-chat-fill me-2"></i>Live Chat
       </h1>
       <div className="chat-box">

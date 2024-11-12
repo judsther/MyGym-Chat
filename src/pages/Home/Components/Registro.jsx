@@ -9,6 +9,7 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useContext } from "react";
 import { UserContext } from "../../../context/UserDataContext";
 import { ProfilePicture } from "../../Welcome/components/ProfilePicture";
+import logoMGC from "/src/assets/images/logoMGC.png";
 
 export const Registro = () => {
   const {
@@ -51,7 +52,8 @@ export const Registro = () => {
 
   return (
     <>
-      <div className="row text-center py-5 px-3 mt-5 d-flex align-items-center justify-content-center">
+      <div className="row text-center px-3 mt-1 d-flex align-items-center justify-content-center">
+      <img src={logoMGC} alt="Logo" className="imgform d-inline-block m-3"/>
         <form onSubmit={handleSubmit(onSubmitForm)}>
           <section className="mb-3">
             <label htmlFor="username" className="form-label">
@@ -136,12 +138,11 @@ export const Registro = () => {
           <button type="submit" className="btn boton-registrarme btn-primary">
             Registrarme
           </button>
-          <br></br>
-          <br></br>
-          <Link className="texto-back" to="/">
+        </form>
+     
+          <Link className="texto-back my-5" to="/">
             Regresar
           </Link>
-        </form>
       </div>
     </>
   );

@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../../context/UserDataContext";
 import { doc, getDoc } from "firebase/firestore";
+import logoMGC from "/src/assets/images/logoMGC.png";
+import "./Registro.css";
 
 export function IniciarSesion() {
   const {
@@ -58,6 +60,7 @@ export function IniciarSesion() {
   return (
     <>
       <div className="row text-center py-5 px-3 mt-5 d-flex align-items-center justify-content-center">
+      <img src={logoMGC} alt="Logo" className="imgform d-inline-block m-3"/>
         <form onSubmit={handleSubmit(onSubmitForm)}>
           <section className="mb-3">
             <label htmlFor="email" className="form-label">
@@ -65,7 +68,7 @@ export function IniciarSesion() {
             </label>
             <input
               type="email"
-              className="form-control"
+              className="form-control forminputs"
               id="email"
               autoComplete="email"
               aria-describedby="emailHelp"
@@ -84,7 +87,7 @@ export function IniciarSesion() {
             </label>
             <input
               type="password"
-              className="form-control"
+              className="form-control forminputs"
               id="password"
               placeholder="enter password"
               {...register("password")}
@@ -94,12 +97,12 @@ export function IniciarSesion() {
             </p>
           </section>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn boton-registrarme">
             Entrar
           </button>
           <br></br>
           <br></br>
-          <Link className="text-primary" to="/">
+          <Link className="texto-back" to="/">
             Regresar
           </Link>
         </form>

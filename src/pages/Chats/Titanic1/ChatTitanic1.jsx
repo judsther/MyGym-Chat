@@ -12,14 +12,6 @@ export const ChatTitanic1 = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
 
-  
-  useEffect(() => {
-    if (currentUser) {
-      console.log("Usuario actual:", currentUser); // Imprime los datos del usuario si están disponibles
-    } else {
-      console.log("Esperando usuario...");
-    }
-  }, [currentUser]);
 
 
   useEffect(() => {

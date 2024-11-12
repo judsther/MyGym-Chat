@@ -1,21 +1,27 @@
 .boton-registrarme {
-    background-color: rgb(135, 189, 255);
-    border-color: rgb(255, 255, 255);
-    color: #151515;
-    ;
-    border-width: 2pt;
+    background-color: #4b31a8;
+    border-color: #4b31a8;
+    color: #ffffff;
+    margin-top: 2rem;
+    border-width: 1pt;
 
 }
 
 .texto-back {
-    color: rgb(135, 189, 255);
+    color: #4b31a8;
 }
 
 .forminputs {
-    border-color: rgb(135, 189, 255);
+    border-color: #4b31a8;
     border-width: 2pt;
 }
 
-.boton-registrarme :hover {
-    background-color: rgb(235, 231, 150);
+.boton-registrarme:hover {
+    background-color: #ffffff ;
+    color: #4b31a8 ;
+    border-color: #4b31a8 ;
+}
+
+.imgform {
+    width: 10rem;
 }

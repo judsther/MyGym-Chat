@@ -9,7 +9,7 @@ export const Message = ({ msg, currentUser }) => {
       minute: "2-digit",
     })
   : "";
-
+  
   return (
     <div>
     <div
@@ -61,5 +61,5 @@ export const Message = ({ msg, currentUser }) => {
 
     </div>
   );
-};
 
+};

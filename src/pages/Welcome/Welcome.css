@@ -8,5 +8,10 @@
 }
 
 .btnchat {
-    background-color: rgb(235, 231, 150);
+    background-color: #1bd865;
+   
+}
+
+.linea {
+    border-color: rgb(79, 62, 152);
 }

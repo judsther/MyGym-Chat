@@ -48,15 +48,15 @@ export const Welcome = () => {
 
       {/*Cards para dirigir a los chats de los difrentes gimnasios inscritos */}
       <br />
-      <hr />
+      <hr className="linea" />
       <br />
       <div className="d-flex text-center align-items-center justify-content-center">
-      <div className="card d-flex align-items-center" style={{width: '18rem'}}>
+      <div className="card d-flex align-items-center" style={{width: '18rem', borderWidth:'0.2rem', borderColor: '#4f3e99'}}>
       <img src={maya} alt="Logo" width="200" className="d-inline-block m-3 mayaimg" />
       <div className="card-body">
       <h5 className="card-title">Gym Maya</h5>
       <p className="card-text">8a calle pte. # 23 Barrio San Juan de Dios. 1701 San Vicente, El Salvador</p>
-      <Link to={'/ChatMaya'} className="btn btnchat">Unirme al chat</Link>
+      <Link to={'/ChatMaya'} className="btn btn-outline-dark btnchat">Unirme al chat</Link>
       </div>
       </div>
       </div>
@@ -64,12 +64,12 @@ export const Welcome = () => {
       <br />
       <br />
       <div className="d-flex text-center align-items-center justify-content-center">
-      <div className="card d-flex align-items-center" style={{width: '18rem'}}>
+      <div className="card d-flex align-items-center" style={{width: '18rem', borderWidth:'0.2rem', borderColor: '#4f3e99'}}>
       <img src={titanic1} alt="Logo" width="200" className="d-inline-block m-3 mayaimg border border-3 border-dark" />
       <div className="card-body">
       <h5 className="card-title">Titanic Gym 1</h5>
       <p className="card-text">4 avenida Norte #31 Barrio El Santuario.</p>
-      <Link to={'/ChatTitanic1'} className="btn btnchat">Unirme al chat</Link>
+      <Link to={'/ChatTitanic1'} className="btn btn-outline-dark btnchat">Unirme al chat</Link>
       </div>
       </div>
       </div>
